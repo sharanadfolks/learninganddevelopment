@@ -1,3 +1,3 @@
 function showMessage() {
-    alert("Hello from JavaScript!");
+    alert("Hello from Sharan");
 }
