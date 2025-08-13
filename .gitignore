@@ -1,1 +1,6 @@
-./Task 1 Dockerzing Static Web App and ACR/terraform/.terraform/
+# Local .terraform directories
+**/.terraform/*
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
