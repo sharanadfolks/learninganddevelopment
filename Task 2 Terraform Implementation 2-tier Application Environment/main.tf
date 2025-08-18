@@ -90,6 +90,17 @@ resource "azurerm_network_security_group" "appgw_nsg" {
     destination_address_prefix = "*"
     destination_port_range     = "65200-65535"
   }
+  security_rule {
+    name                       = "Allow_HTTP"
+    priority                   = 150
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "80"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
 }
 
 resource "azurerm_subnet_network_security_group_association" "app_nsg_assoc" {
