@@ -260,10 +260,10 @@ resource "azurerm_virtual_machine_scale_set_extension" "vmss_iis" {
   type_handler_version         = "1.10"
 
   settings = <<SETTINGS
-    {
-        "fileUris": ["https://${azurerm_storage_account.vmss_scripts.name}.blob.core.windows.net/scripts/install-iis.ps1"],
-          "commandToExecute": "powershell -ExecutionPolicy Unrestricted -file install-iis.ps1"     
-    }
-SETTINGS
+{
+    "fileUris": ["https://${azurerm_storage_account.vmss_scripts.name}.blob.core.windows.net/scripts/install-iis.ps1"],
+    "commandToExecute": "powershell -ExecutionPolicy Bypass -File .\\install-iis.ps1"
 }
+SETTINGS
 
+}
